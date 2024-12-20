@@ -294,6 +294,17 @@ for url in valid_urls:
                         name = name.replace("CCTV5+体育赛视", "CCTV5+")
                         name = name.replace("CCTV5+体育赛事", "CCTV5+")
                         name = name.replace("CCTV5+体育", "CCTV5+")
+                        name = name.replace("兵器科技", "CCTV-兵器科技")
+                        name = name.replace("第一剧场", "CCTV-第一剧场")
+                        name = name.replace("风云足球", "CCTV-风云足球")
+                        name = name.replace("世界地理", "CCTV-世界地理")
+                        name = name.replace("风云音乐", "CCTV-风云音乐")
+                        name = name.replace("风云剧场", "CCTV-风云剧场")
+                        name = name.replace("怀旧剧场", "CCTV-怀旧剧场")
+                        name = name.replace("文化精品", "CCTV-文化精品")
+                        name = name.replace("女性时尚", "CCTV-女性时尚")
+                        name = name.replace("电视指南", "CCTV-电视指南")
+                        name = name.replace("高尔夫网球", "CCTV-高尔夫网球")
                         results.append(f"{name},{urld}")
         except:
             continue
@@ -429,15 +440,15 @@ with open("itvlist.txt", 'w', encoding='utf-8') as file:
                 if channel_counters[channel_name] >= result_counter:
                     continue
                 else:
-                    file.write(f"{channel_name},{channel_url}\n")
+                    文件。write(f"{channel_name},{channel_url}\n")
                     channel_counters[channel_name] += 1
             else:
-                file.write(f"{channel_name},{channel_url}\n")
+                文件。write(f"{channel_name},{channel_url}\n")
                 channel_counters[channel_name] = 1
 
 with open("itvlist.m3u", 'w', encoding='utf-8') as file:
     channel_counters = {}
-    file.write('#EXTM3U\n')
+    文件。write('#EXTM3U\n')
     for result in results:
         channel_name, channel_url, speed = result
         if 'CCTV' in channel_name:
@@ -445,12 +456,12 @@ with open("itvlist.m3u", 'w', encoding='utf-8') as file:
                 if channel_counters[channel_name] >= result_counter:
                     continue
                 else:
-                    file.write(f"#EXTINF:-1 group-title=\"央视频道\",{channel_name}\n")
-                    file.write(f"{channel_url}\n")
+                    文件。write(f"#EXTINF:-1 group-title=\"央视频道\",{channel_name}\n")
+                    文件。write(f"{channel_url}\n")
                     channel_counters[channel_name] += 1
             else:
-                file.write(f"#EXTINF:-1 group-title=\"央视频道\",{channel_name}\n")
-                file.write(f"{channel_url}\n")
+                文件。write(f"#EXTINF:-1 group-title=\"央视频道\",{channel_name}\n")
+                文件。write(f"{channel_url}\n")
                 channel_counters[channel_name] = 1
     channel_counters = {}
     #file.write('卫视频道,#genre#\n')
@@ -461,12 +472,12 @@ with open("itvlist.m3u", 'w', encoding='utf-8') as file:
                 if channel_counters[channel_name] >= result_counter:
                     continue
                 else:
-                    file.write(f"#EXTINF:-1 group-title=\"卫视频道\",{channel_name}\n")
-                    file.write(f"{channel_url}\n")
+                    文件。write(f"#EXTINF:-1 group-title=\"卫视频道\",{channel_name}\n")
+                    文件。write(f"{channel_url}\n")
                     channel_counters[channel_name] += 1
             else:
-                file.write(f"#EXTINF:-1 group-title=\"卫视频道\",{channel_name}\n")
-                file.write(f"{channel_url}\n")
+                文件。write(f"#EXTINF:-1 group-title=\"卫视频道\",{channel_name}\n")
+                文件。write(f"{channel_url}\n")
                 channel_counters[channel_name] = 1
     channel_counters = {}
     #file.write('其他频道,#genre#\n')
@@ -477,12 +488,12 @@ with open("itvlist.m3u", 'w', encoding='utf-8') as file:
                 if channel_counters[channel_name] >= result_counter:
                     continue
                 else:
-                    file.write(f"#EXTINF:-1 group-title=\"其他频道\",{channel_name}\n")
-                    file.write(f"{channel_url}\n")
+                    文件。write(f"#EXTINF:-1 group-title=\"其他频道\",{channel_name}\n")
+                    文件。write(f"{channel_url}\n")
                     channel_counters[channel_name] += 1
             else:
-                file.write(f"#EXTINF:-1 group-title=\"其他频道\",{channel_name}\n")
-                file.write(f"{channel_url}\n")
+                文件。write(f"#EXTINF:-1 group-title=\"其他频道\",{channel_name}\n")
+                文件。write(f"{channel_url}\n")
                 channel_counters[channel_name] = 1
 
 
